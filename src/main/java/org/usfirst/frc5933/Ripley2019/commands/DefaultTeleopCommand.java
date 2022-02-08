@@ -46,7 +46,7 @@ public class DefaultTeleopCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.driveTrain.arcadeDrive(); 
+        Robot.driveTrain.tankDrive(); 
         SmartDashboard.putString("DefaultTeleop Running: ", " execute");
         try {
             SmartDashboard.putString( "Vision Socket direction:", Robot.rft_.get_direction());

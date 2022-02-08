@@ -313,8 +313,8 @@ public class DriveTrain extends Subsystem {
 	}
 
 	public void tankDrive() {
-		driveTrainLeftMaster.set(Robot.oi.driverJoystick.getLeftY());
-		driveTrainRightMaster.set(Robot.oi.driverJoystick.getRightY());
+		driveTrainLeftMaster.set(-Robot.oi.driverJoystick.getLeftY());
+		driveTrainRightMaster.set(-Robot.oi.driverJoystick.getRightY());
 	}
 	
 	
