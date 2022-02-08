@@ -121,7 +121,7 @@ public class Arm extends Subsystem {
         public void moveArm() {
             boolean lowerSwitch = Robot.roboRio.DIPs[0].get();
             boolean upperSwitch = Robot.roboRio.DIPs[1].get();
-			double j = Robot.oi.subsystemJoystick.getY() * this.joyStickPolarity;
+			double j = Robot.oi.subsystemJoystick.getLeftY() * this.joyStickPolarity;
 			
 			// armSubsystemMotor.set(j);
 			setArmMotorVbus( j);

@@ -79,6 +79,7 @@ public class RobotMap {
     	//Convention: evens are left motors, odds are right motors.
         drivetrainLeftMaster = new WPI_TalonSRX(10);
         drivetrainRightMaster = new WPI_TalonSRX(11);
+        drivetrainRightMaster.setInverted(true);
         
         //Instantiate robot drive type for teleop control.
         drivetrainRobotDrive = new DifferentialDrive(drivetrainLeftMaster, drivetrainRightMaster);
@@ -97,6 +98,8 @@ public class RobotMap {
         //instantiate right side followers on odd IDs
         drivetrainRightFollower1 = new WPI_TalonSRX(13);
         drivetrainRightFollower2 = new WPI_TalonSRX(15);
+        drivetrainRightFollower1.setInverted(true);
+        drivetrainRightFollower2.setInverted(true);
         
         //instantiate gyro. B/c it is an SPI gyroscope, no need for calibration methods yet
         //Gyro = new ADXRS450_Gyro();

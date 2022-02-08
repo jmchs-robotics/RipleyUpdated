@@ -304,12 +304,17 @@ public class DriveTrain extends Subsystem {
 
 	public void arcadeDrive() {
 		//robotDrive.arcadeDrive( Robot.oi.driverJoystick.getX(), Robot.oi.driverJoystick.getY()); feels like 90 deg off
-		robotDrive.arcadeDrive(-Robot.oi.driverJoystick.getY(), Robot.oi.driverJoystick.getX());
+		robotDrive.arcadeDrive(-Robot.oi.driverJoystick.getLeftY(), Robot.oi.driverJoystick.getLeftX());
 	}
 	
 	public void tankDrive(double leftVal, double rightVal) {
-		driveTrainLeftMaster.set(ControlMode.PercentOutput, leftVal);
-		driveTrainRightMaster.set(ControlMode.PercentOutput, rightVal);
+		driveTrainLeftMaster.set(leftVal);
+		driveTrainRightMaster.set(rightVal);
+	}
+
+	public void tankDrive() {
+		driveTrainLeftMaster.set(Robot.oi.driverJoystick.getLeftY());
+		driveTrainRightMaster.set(Robot.oi.driverJoystick.getRightY());
 	}
 	
 	
